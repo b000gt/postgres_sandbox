@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  postgres-db:
+    image: postgres:12
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment: 
+      POSTGRES_USER: osmuser
+      POSTGRES_PASSWORD: '123'
+      POSTGRES_DB: eosmdbtwo
+    restart: always
+  guest-test:
+    build: .
+    environment:
+      PGPASSWORD: Test1234
