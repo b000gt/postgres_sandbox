@@ -28,6 +28,15 @@ GRANT USAGE  ON SCHEMA public TO public;
 GRANT CREATE ON SCHEMA public TO public;
 --
 
+-- guest4
+REVOKE ALL ON SCHEMA public FROM public;
+
+CREATE ROLE guest4 WITH LOGIN PASSWORD 'Test1234';
+GRANT CONNECT ON DATABASE eosmdbtwo TO guest4;
+GRANT USAGE ON SCHEMA public TO guest4;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO guest4;
+--
+
 CREATE TABLE already_here (
     id_here INTEGER
 );

@@ -15,3 +15,6 @@ psql -U guest2 -p 5432 -h postgres-db -d eosmdbtwo -f psql-commands.sql
 echo "testing guest3"
 echo "------------------------------------"
 psql -U guest3 -p 5432 -h postgres-db -d eosmdbtwo -f psql-commands.sql
+echo "testing guest4"
+echo "------------------------------------"
+psql -U guest4 -p 5432 -h postgres-db -d eosmdbtwo -f psql-commands.sql
